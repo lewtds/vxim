@@ -1,3 +1,12 @@
+   lewtds' notes:
+   
+   Dự án này cơ bản là một bộ gõ tiếng Trung dạng table của tác giả T.H.Hsieh
+   được bổ sung thêm các bảng định nghĩa cách gõ tiếng Việt trong thư mục
+   `cin/vi` và các script để launch các ứng dụng hay dùng như gedit với các
+   biến môi trường riêng về font và encoding trong thư mục `vietnam`.
+
+*************************************************************************
+
         Ðây là hướng dẫn cài đặt cho XVIM version 0.2
                                       
    Ðây là version thử nghiệm nên còn nhiều thiếu sót và
