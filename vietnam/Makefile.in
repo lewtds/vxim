@@ -1,0 +1,43 @@
+#
+# This is Makefile.in for autoconf configure program.
+#
+INSTALL	        = @INSTALL@
+INSTALL_PROGRAM = @INSTALL_PROGRAM@
+INSTALL_DATA	= @INSTALL_DATA@
+OS_TYPE		= @os_type@
+@SET_MAKE@
+
+#
+# XCIN installation path.
+#
+program_prefix	= @program_prefix@
+srcdir		= @srcdir@
+top_srcdir	= @top_srcdir@
+prefix		= @prefix@
+exec_prefix	= @exec_prefix@
+
+xcin_binp	= $(program_prefix)@bindir@
+xcin_libp	= $(program_prefix)@xcin_dir@
+xcin_datap	= ${xcin_libp}/tab
+xcin_rcp	= $(program_prefix)@xcin_rcdir@
+xcin_manp	= $(program_prefix)@mandir@
+
+all: xvim
+
+xvim:
+	sed -e "s|%xcin_exepath%|$(xcin_binp)|" \
+		-e "s|%xcin_rcpath%|$(xcin_rcp)|" xvim.in > xvim
+
+.PHONY: install clean distclean subsys
+
+install: all
+	$(INSTALL_PROGRAM) xvim $(xcin_binp)
+	$(INSTALL_PROGRAM) rxvt-vi $(xcin_binp)
+	$(INSTALL_PROGRAM) gvim-vi $(xcin_binp)
+
+clean:
+	rm -f xvim
+
+distclean:
+	rm -f xvim Makefile .depend
+

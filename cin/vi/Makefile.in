@@ -1,0 +1,49 @@
+INSTALL         = @INSTALL@
+INSTALL_PROGRAM = @INSTALL_PROGRAM@
+INSTALL_DATA    = @INSTALL_DATA@
+OS_TYPE		= @os_type@
+tabe_data	= @tabe_data@
+@SET_MAKE@
+
+program_prefix = @program_prefix@
+srcdir      = @srcdir@
+top_srcdir  = @top_srcdir@
+prefix      = @prefix@
+exec_prefix = @exec_prefix@
+
+xcin_binp   = $(program_prefix)@bindir@
+xcin_libp   = $(program_prefix)@xcin_dir@
+xcin_datap  = ${xcin_libp}/tab
+xcin_rcp    = $(program_prefix)@xcin_rcdir@
+xcin_manp   = $(program_prefix)@mandir@
+
+cin2tab = $(top_srcdir)/src/util/cin2tab/cin2tab
+xcinrc  = $(top_srcdir)/etc/xcinrc
+
+
+#CIN_FILE=cj.cin telex.cin viqr.cin vni.cin
+CIN_FILE=telex_tcvn.cin \
+	telex_viscii.cin \
+	viqr_tcvn.cin \
+	viqr_viscii.cin \
+	vni_tcvn.cin \
+	vni_viscii.cin
+
+.PHONY: install clean distclean
+
+all: sys.cin.iso88591
+	$(cin2tab) -r $(xcinrc) -l iso-8859-1 -o sys.tab sys.cin.iso88591
+	for f in $(CIN_FILE); do \
+		$(cin2tab) -r $(xcinrc) -l iso-8859-1 -s sys.tab $$f ;\
+	done
+
+install: all
+	mkdir -p $(xcin_datap)/iso-8859-1
+	$(INSTALL_DATA) *.tab $(xcin_datap)/iso-8859-1
+
+clean:
+	rm -f *.tab* core
+
+distclean: clean
+	rm -f Makefile
+

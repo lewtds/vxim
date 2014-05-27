@@ -1,0 +1,117 @@
+%sys
+#
+# This is the system constant string cin file of xcin-2.5.
+# Modified by Do Hoang Son for XVIN-0.0.1, 30/10/2000.
+# keyname		iso8859-1
+
+INPN_ENGLISH	EN
+INPN_SBYTE		SB
+INPN_2BYTES		2B
+
+ASCII_space			0x20
+ASCII_exclam			!
+ASCII_quotedbl			0x22
+ASCII_numbersign		#
+ASCII_dollar			$
+ASCII_percent			%
+ASCII_ampersand			&
+ASCII_apostrophe		0x27
+ASCII_parenleft			(
+ASCII_parenright		)
+ASCII_asterisk			*
+ASCII_plus			+
+ASCII_comma			,
+ASCII_minus			-
+ASCII_period			.
+ASCII_slash			/
+ASCII_0			0
+ASCII_1		 	1
+ASCII_2			2
+ASCII_3			3
+ASCII_4			4
+ASCII_5			5
+ASCII_6			6
+ASCII_7			7
+ASCII_8			8
+ASCII_9			9
+ASCII_colon		:
+ASCII_semicolon		;
+ASCII_less		<
+ASCII_equal		=
+ASCII_greater		>
+ASCII_question		?
+ASCII_at		@
+ASCII_A			A
+ASCII_B			B
+ASCII_C			C
+ASCII_D			D
+ASCII_E			E
+ASCII_F			F
+ASCII_G			G
+ASCII_H			H
+ASCII_I			I
+ASCII_J			J
+ASCII_K			K
+ASCII_L			L
+ASCII_M			M
+ASCII_N			N
+ASCII_O			O
+ASCII_P			P
+ASCII_Q			Q
+ASCII_R			R
+ASCII_S			S
+ASCII_T			T
+ASCII_U			U
+ASCII_V			V
+ASCII_W			W
+ASCII_X			X
+ASCII_Y			Y
+ASCII_Z			Z
+ASCII_bracketleft	[
+ASCII_backslash		\
+ASCII_bracketright	]
+ASCII_asciicircum	^
+ASCII_underscore	_
+ASCII_grave		`
+ASCII_a			a
+ASCII_b			b
+ASCII_c			c
+ASCII_d			d
+ASCII_e			e
+ASCII_f			f
+ASCII_g			g
+ASCII_h			h
+ASCII_i			i
+ASCII_j			j
+ASCII_k			k
+ASCII_l			l
+ASCII_m			m
+ASCII_n			n
+ASCII_o			o
+ASCII_p			p
+ASCII_q			q
+ASCII_r			r
+ASCII_s			s
+ASCII_t			t
+ASCII_u			u
+ASCII_v			v
+ASCII_w			w
+ASCII_x			x
+ASCII_y			y
+ASCII_z			z
+ASCII_braceleft		{
+ASCII_bar		|
+ASCII_braceright	}
+ASCII_asciitilde	~
+
+#
+#  This is Big5 encoding, char1: <0xa1> ... <0xf9>
+#			  char2: <0x40> ... <0x7e>, <0xa1> ... <0xfe>
+%charcode	begin
+plane1		0x01-0x02
+plane1    0x04-0x06
+plane1    0x11-0x17
+plane1    0x21-0x7e
+plane1    0x80-0xff
+
+%charcode	end

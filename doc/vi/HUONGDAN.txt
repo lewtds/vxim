@@ -1,0 +1,152 @@
+
+        DDa^y la` hu+o+'ng da^~n ca`i dda(.t cho XVIM version 0.2
+                                      
+   DDa^y la` version thu+? nghie^.m ne^n co`n nhie^`u thie^'u so't va`
+   ba^'t tie^.n, mong ca'c ba.n cu`ng chung su+'c pha't trie^?n no'.
+   Xvim cu~ng nhu+ xcin la` open sources, distributed theo GNU/GPL
+   license. Do ddo' ca'c ba.n cu+' download, modify, develope no' thoa?i
+   ma'i  theo y' ba.n.
+   
+   Thu+ Go'p y' xin gu+? ve^` dhson@thep.physik.uni-mainz.de.
+   
+   **********************************************************************
+   *
+   
+   * Special Thank to T.H.Hsieh (thhsieh@linux.org.tw), one of the
+   authours
+   * of X-CIN, for his special supports.
+   * Without his helps, I didn't dare to start this project.
+   * Thank to Bruno Haible and other experts of XFRE86/i18n project.
+   * Thank to my friends at VieLUG encouraged me to ddo this,
+   * Mr. Nguye^~n DDa.i Quy', La.i Hoa`i TRie^'t, Ha`n The^' Thanh et al.
+   
+   **********************************************************************
+   *
+   
+   A. CA`I DDA(.T
+   
+   $ cd /tmp
+   $ tar xvzf xvim-0.2.tar.gz
+   $ cd xvim-0.2
+   $ ./configure --disable-bimsphone --disable-debug --prefix=/path/to/xvim
+   
+   Vo+'i /path/to/xvim la` no+i ba.n muo^'n binary file se~
+   ddu+o+.c install. (Vi' du. nhu+ /usr/local/xvim cha(?ng ha.n)
+
+   Trong pha^`n tie^'p sau to^i gia? su+? ba.n cho.n --prefix=$HOME/xvim.
+   Option --disable-bimsphone ca^`n ddu+o+.c type ddu'ng nguye^n nhu+
+   the^'. Option na`y du`ng cho Chinese input methode, ta ca^`n 'turn off' no'.
+   
+   $ make
+   $ make install
+   
+   Lu'c na`y thu+ mu.c $HOME/xvim se~ ddu+o+.c kho+?i ta.o.
+   
+   B. Configurate tru+o+'c khi cha.y.
+   
+   1. Ba.n pha?i chua^?n bi. 1 so^' bie^'n mo^i tru+o+`ng ca^`n thie^'t dde^? ca'c
+   apps nha^.n ra xvim. Ba.n pha?i chua^?n bi. ca'c font cho TCVN,
+   ba.n ne^n du`ng type1 font co' the^? download ta.i VietLUG hay trong
+   site na`y\.
+   
+   2. Edit file $HOME/.Xresources, 
+   the^m ca'c ha`ng sau dda^y cho Netscape Composer va` xedit:
+   
+   xtDefaultFontSet: -tcvn-*-16-*-iso8859-1,-dobe-*-iso8859-1
+   xedit*international: True
+   xedit*fontSet: -tcvn-*-16-*-so8859-1, -adobe-*-16-*-iso8859-1
+   .Xedit.shellext.inputMethod: xvim
+   .Xedit.shellext.preeditType: Root
+   Netscape*useStderrDialog: False
+   Netscape*preeditType: Root
+   
+   O+? tre^n to^i gia? su+? ba.n dda~ co' font vo+'i te^n la` tcvn, to^i
+   kho^ng nho+' ro~ dda^y la` te^n default do anh Thanh (VietLUG) dda(.t
+   hay do to^i modify. Ne^'u ba.n ga(.p kho' kha(n ve^` font, ba.n co'
+   the^? Email cho to^i (dhson@thep.physik.uni-mainz.de) hay post le^n
+   mailling list cu?a VietLUG ho?i anh Thanh (recommended :-)))
+   
+   Configuration cho XEMACS ba.n coi the^m trong thu+ mu.c
+   xvim-0.2/doc/en/UserGuide.*
+   
+   3. Open 1 xterm, ca'c le^.nh tie^'p sau ta se~ la`m vie^.c va` lunch
+   ca'c apps tre^n/tu+` xterm na`y.
+   
+   $ export LC_CTYPE=en_US
+   $ export XMODIFIERS="@im=xvim"
+   $ $HOME/xvim/bin/xcin -x xvim &
+  
+   Hoa(.c ddo+n gia?n ho+n co' the^? su+? du.ng script 'xvim' :
+   
+   $ xvim
+    
+   Ba.n se~ tha^'y tho^ng ba'o nhu+ sau:
+------------------------------------------------------ 
+	X-VIM (X-Vietnamese Input Method)
+	Version xcin 2.5.2.1.
+
+	xcin: Locale="en_US" Encoding="iso-8859-1"
+	xcin: XIM Server="xvim" Transport="X/"
+	xcin: inp_styles = "Root" "OverTheSpot"
+------------------------------------------------------
+   
+   Ba^y gio+` ba.n hay run 1 editor na`o ddo' TU*` cu`NG Xterm ba.n issue
+   le^nh export o+? tre^n dde^? test. To^'t nha^'t va` de^~ nha^'t la`
+   "gedit" ne^'u ba.n du`ng GNOME va` cho.n font ti^'ng Vie^.t. Ne^'u
+   kho^ng ba.n co' the^? run "xedit", to^i nghi~ default la` co' trong
+   Linux box cu?a ba.n. Te^. ho+n ba.n co' the^? run Netscape/Edit page.
+   
+   Na`o ba^y gio+` ddu+a cursor va`o cu+?a so^? va` chuye^?n qua tie^'ng
+   Vie^.t ba(`ng ca'ch nha^'n ke'p Ctr+Spacebar. Khi na`y control window
+   se~ co' chu+~ VN. Switch "Ctr+Spacebar" 1 la^`n nu+~a se~ tra? ve^` go~
+   tie^'ng Anh.
+   
+   Ba.n dda~ sa(~n sa`ng dde^? go~ tie^'ng Vie^.t ro^`i.
+   
+   C. CA'CH GO~
+   
+   Ba.n go~ theo lua^.t Telex, to^i kho^ng cha('c to^i nho+' ddu'ng
+   lua^.t Telex ne^n thie^'t la^.p lua^.t go~ nhu+ sau:
+   a' = as
+   a` = af
+   a? = ar
+   a~ = ax
+   a. = aj
+   a^ = aa
+   a( = aw
+   o^ = oo
+   o+ = ow
+   dd = dd
+   u+ = w
+   ect....
+   
+   Ne^'u ba.n tha^'y chu+a ddu'ng lua^.t go~ Telex thi` mail cho to^i nhe:-)
+   
+   DDe^? chuye^?n qua la.i giu+~a telex, VNI, VIQR:
+   Ctrl+Alt+1  dde^? go~  kie^?u TELEX
+   Ctrl+Alt+2 dde^? go~  kie^?u VNI
+   Ctrl+Alt+3  dde^? go~ kie^?u VIQR.
+   
+   Vi` dda^y la` ba?n thu+? nghie^.m ne^n sau khi go~ to^? ho+.p phi'm
+   (eg. as) ba.n ca^`n nha^'n phi'm spacebar  tre^n ba`n phi'm dde^?
+   cha^'p nha^.n, sau ddo' ky' tu+. se~ ddu+o+.c commit cho IM va` pass
+   qua cho apps. Dda^y la` TODO cu?a version sau.
+   
+   Vo+'i Netscape Composer, ba.n co' the^? ca^`n pha?i switch qua Telex
+   mode ba(`ngCtrl+Spacebar sau ddo' Ctrl+Alt+f dde^? focus le^n apps.
+   
+   DDa^y la` bug cu?a netscape. Well. Ba.n co' the^? thu+? vo+'i ca'c
+   apps kha'c va` ne^'u tha`nh co^ng thi` mail le^n VietLUG cho anh em
+   bie^'t nhe'.
+   Hi vo.ng la` "xvim" se~ hu+~u du.ng cho ca'c ba.n.
+   
+   VA` NHO+': Email cho to^i ne^'u ca'c ba.n muo^'n tham gia project hay
+   tha^'y ddie^`u gi` thie^'u so't. To^i muo^'n ddu+o+.c trao ddo^?i
+   vo+'i ca'c ba.n theo ddu'ng tinh tha^`n cu?a OPEN SOURCE.
+   T.H.Hsieh dda~ giu'p to^i theo ddu'ng tinh tha^`n na`y va` to^i cu~ng
+   muo^'n mang no' ra share cu`ng ca'c ba.n, chi? vo+'i 1 ddie^`u kie^.n
+   duy nha^'t la`: Ne^'u ca'c ba.n develope xvim xong thi` nho+' gu+?i
+   cho to^i 1 ba?n xa`i vo+'i :-))).
+   
+   Mainz, 25/10/2000
+   DO Hoang Son

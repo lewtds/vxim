@@ -1,0 +1,39 @@
+#!/bin/bash
+#
+# NGUYEN-DAI Quy
+#
+# Sat Nov  4 2000
+#
+# Gvim & Vietnamese font
+
+charset=`echo $1 | tr '[A-Z]' '[a-z]'`
+
+GVIM=gvim
+#GVIM=/usr/bin/gvim
+
+case $charset in
+	'tcvn')
+		FONT=-misc-fixed-medium-r-normal--*-140-*-*-c-*-tcvn-5712
+		shift
+		;;
+	'viscii')
+		FONT=-viscii-fixed-medium-r-normal--*-160-*-*-c-*-iso8859-1
+		shift
+		;;
+	'vps')
+		FONT=-misc-fixed-medium-r-normal--*-140-*-*-c-*-vps-1
+		shift
+		;;
+	*)
+		FONT=-misc-fixed-medium-r-normal--*-140-*-*-c-*-tcvn-5712
+		;;
+esac
+		
+# FONT0=-tcvn-fixed-medium-r-normal--20-200-75-75-c-100-iso8859-1 # not works !!!
+#FONT=-misc-fixed-medium-r-normal--15-140-75-75-c-90-tcvn-5712
+#FONT2=-misc-fixed-medium-r-normal--18-120-100-100-c-90-tcvn-5712
+#FONT3=-tcvn-fixed-medium-r-normal--16-160-72-72-c-80-iso8859-1
+#FONT4=-tcvn-fixed-medium-r-normal--24-240-72-72-c-120-iso8859-1
+
+${GVIM} -fn ${FONT} $@
+

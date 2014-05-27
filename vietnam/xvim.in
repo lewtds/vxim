@@ -1,0 +1,23 @@
+#!/bin/bash
+#
+# NGUYEN-DAI Quy
+# Mon Nov 13 21:45:22 CET 2000
+#
+# Run Xcin/Xvim server
+
+APPS=$*
+
+XCIN_EXE=%xcin_exepath%/xcin
+XCIN_RCFILE=%xcin_rcpath%/xcinrc
+export XCIN_RCFILE
+
+export LC_CTYPE="en_US"
+export XMODIFIERS="@im=xvim"
+
+${XCIN_EXE} -x xvim -r ${XCIN_RCFILE} &
+if [ "$APPS" != "" ] ; then
+	$APPS &
+else 
+	gedit & 
+fi
+

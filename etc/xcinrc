@@ -1,0 +1,142 @@
+;
+;  Xvin resource file for GNU/Linux
+;
+;  By T.H.Hsieh.
+;  Modified by Do Hoang Son, 26/10/2000 
+
+;
+;  Directories.
+;
+(define XCIN_DEFAULT_DIR      "/home/users/locnguyen/XVIM/lib/xcin")
+(define XCIN_USER_DIR         ".xcin")
+
+;
+;  This defines GUI attribute.
+;
+(define INDEX_FONT  		"-adobe-helvetica-bold-r-normal--24-*-*-*-p-*-iso8859-1")
+(define FG_COLOR    		"white")
+(define BG_COLOR    		"blue")
+(define M_FG_COLOR  		"red")
+(define M_BG_COLOR  		"white")
+(define ULINE_COLOR			"cyan")
+(define GRID_COLOR			"white")
+(define X_GEOMETRY  		"120x10")
+(define START_MAINWIN2		"NO")
+(define MAINWIN2_GEOMETRY	"100x10+10-10")
+(define XCIN_HIDE   		"NO")
+(define XKILL_DISABLE		"NO")
+(define ICCHECK_DISABLE 	"NO")
+(define SINGLE_IM_CONTEXT	"NO")
+(define IM_FOCUS_ON			"NO")
+(define KEEP_POSITION_ON	"NO")
+(define DISABLE_WM_CTRL		"NO")
+(define DIFF_BEEP			"NO")
+
+(define LOCALE	'(en_US))
+
+;
+;  Special Trigger Keys.
+;
+;(define FKEY_ZHEN		"ctrl space")
+;(define FKEY_2BSB		"shift space")
+;(define FKEY_CIRIM		"ctrl shift")
+;(define FKEY_CIRRIM	"shift ctrl")
+;(define FKEY_CHREP		"ctrl alt r")
+;(define FKEY_SIMD		"ctrl alt i")
+;(define FKEY_IMFOCUS	"ctrl alt f")
+;(define FKEY_IMN		"ctrl alt")
+;(define FKEY_QPHRASE	"shift alt")
+
+;
+;  IM module default resources.
+;
+(define gen_inp_default
+        '((AUTO_COMPOSE         YES)
+          (AUTO_UPCHAR          YES)
+          (AUTO_FULLUP          YES)
+          (SPACE_AUTOUP         YES)
+          (SELKEY_SHIFT         YES)
+          (SPACE_IGNORE         NO)
+          (SPACE_RESET          YES)
+          (AUTO_RESET           YES)
+          (WILD_ENABLE          YES)
+          (SINMD_IN_LINE1       YES)
+          (END_KEY              YES)
+          (QPHRASE_MODE         0)      ; 1: shift, 2: ctrl, 4: alt
+          (DISABLE_SEL_LIST     "NONE")
+		  (KEYSTROKE_REMAP	  	YES)
+          (BEEP_WRONG           YES)
+          (BEEP_DUPCHAR         NO)))
+
+(define bimsphone_default
+        '((N_SELECTION_KEY      9)
+          (SELECTION_KEYS       0)      ; 0: "1234567890", 1: "asdfgjkl;"
+          (PAGE_KEYS            5)      ; 1:<> 2:,. 4:(Rt)(Lt)
+          (QPHRASE_MODE         1)      ; 1: shift, 2: ctrl, 4: alt
+        ;
+        ; This is only valid for "bimsphone*" IM name.
+          (AUTO_SELECTION       YES)
+          (KEYMAP               0)      ; 0: zozy, 1: et, 2: et26, 3: hsu
+        ;
+        ; This is only valid for "bimspinyin*" IM name.
+          (PINPHO_MAP           "bims_pinyin")
+        ;
+        ; The following has effect only when AUTO_SELECTION is YES
+          (TSI_FNAME            "tsi.db")
+          (YIN_FNAME            "yin.db")
+          (SPACE_SELECTION      NO)
+          (PHRASE_SELECTION     YES)
+          (N_SELECTION_PHR      4)
+        ;
+        ; The following has effect only when AUTO_SELECTION is NO
+          (AUTO_UPCHAR          YES)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;  This is the global configuration of the Vietnamese input locale 
+;
+(define en_US
+  '((DEFAULT_IM			"telex_tcvn")
+    (DEFAULT_IM_MODULE	"gen_inp")
+    (DEFAULT_IM_SINMD	"DEFAULT")
+    (CINPUT		(telex_tcvn telex_viscii viqr_tcvn viqr_viscii vni_tcvn vni_viscii))
+    (FONTSET			"-*-iso8859-1")
+    (OVERSPOT_FONTSET	"-*-iso8859-1")))
+;
+;  Here are detailed configuration of each IM (for Vietnamese).
+;
+; Modified by NGUYEN-DAI Quy <NDQ@iris.ltas.ulg.ac.be>
+; Tue Nov 14 21:07:17 CET 2000
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;  TELEX input Method
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Telex method with TCVN charset
+(define telex_tcvn@iso-8859-1
+    '((SETKEY       1)))
+
+; Telex method with VISCII charset
+(define telex_viscii@iso-8859-1
+    '((SETKEY       2)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;   VIQR input method
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; VIQR method with TCVN charset
+(define viqr_tcvn@iso-8859-1
+    '((SETKEY       3)))
+; VIQR method with VISCII charset
+(define viqr_viscii@iso-8859-1
+    '((SETKEY       4)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; VNI input method
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; VNI method with TCVN charset
+(define vni_tcvn@iso-8859-1
+    '((SETKEY       5)))
+
+; VNI method with VISCII charset
+(define vni_viscii@iso-8859-1
+    '((SETKEY       6)))
+
